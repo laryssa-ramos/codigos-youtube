@@ -35,14 +35,14 @@ navLink.forEach(n => n.addEventListener('click', linkAction))
 // HOME SWIPER
 
 let homeSwiper = new Swiper(".home-swiper", {
-    spanceBetween: 30,
-    loop:'true',
-
+    spaceBetween: 30,
+    loop: 'true',
+    
     pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    },
-  });
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+});
 
 //   CHANGE BACKGROUND HEADER
 
@@ -57,16 +57,10 @@ window.addEventListener('scroll', scrollHeader)
 
 let newSwiper = new Swiper(".new-swiper", {
     centeredSlides: true,
-    slidesPerView: 'auto',
+    slidesPerView: "auto",
+    loop: 'true',
     spaceBetween: 16,
-    loop:'true',
-
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    },
-  });
-
+});
   // SCROLL SECTIONS ACTIVE LINK
 
   const sections = document.querySelectorAll('section[id]')
@@ -96,3 +90,19 @@ function scrollUp(){
     if(this.scrollY >= 460) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
+
+
+//SCROLL REVEAL ANIMATION
+
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    //reset:true
+})
+
+sr.reveal('.home-swiper, .new-swiper, .newsletter__container')
+sr.reveal('.category__data, .trick__content, .footer__content', {interval: 100})
+sr.reveal('.about__data, .discount__img', {origin: 'left'})
+sr.reveal('.about__img, .discount__data', {origin: 'right'})

@@ -29,3 +29,17 @@ window.onscroll = () =>{
     cartItem.classList.remove('active');
 }
 
+
+
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    //reset:true
+})
+
+// sr.reveal('.home-swiper, .new-swiper, .newsletter__container')
+// sr.reveal('.category__data, .trick__content, .footer__content', {interval: 100})
+sr.reveal('.image', {origin: 'left'})
+sr.reveal('.content',{origin: 'right'})
